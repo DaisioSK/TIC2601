@@ -2,7 +2,7 @@
 const path = require('path');
 const express = require('express');
 
-//20210926 seakon: create the app instance
+//create the app instance
 const app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
