@@ -1,0 +1,41 @@
+<h1>mod1_about page</h1>
+
+<div class="demoBlk">
+    <h3>Case 1: Get user input and display logic check result</h3>
+    <form method="GET">
+        <div>
+            <label>put a number here</label>
+            <input name="input_number" type="number" value="<%= data.number %>">
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+    <p>Is this number more than 10? <%= data.result %></p>
+</div>
+
+<div class="demoBlk">
+    <h3>Case 2: Show result of "SELECT title FROM category" here:</h3>
+    <% data.name.forEach(function(rec) { %>
+        <p>
+            <b>Title: </b> <%= rec.title %>, 
+            <b>Image: </b> <%= rec.img %>, 
+            <b>Create Datetime:</b> <%= rec.c_time %>, 
+            <b>Modify Datetime:</b> <%= rec.m_time %>, 
+        </p>
+    <% }); %>
+</div>
+
+<div class="demoBlk">
+    <h3>Case 3: store user input into DB</h3>
+    <form method="POST" >
+        <div>
+            <label>Change title of category(cat__id=1): </label>
+            <input name="title" type="text" value="<%= data.title %>">
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+<style>
+.demoBlk { margin: 20px; padding: 20px; border: 1px solid;}
+</style>
+
